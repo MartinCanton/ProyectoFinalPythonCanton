@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block cambiante %}
+    <hr>
+    <hr>
+    <hr>
+    <hr><br>
+    <p>{{ fecha }}</p>
+    <h6>Titulo: {{ titulo }}</h6>
+    <p>Descripcion: {{ subtitulo }}</p>
+    <hr>
+    <p>Detalles del inmueble: {{ cuerpo }}</p>
+    <br>
+    <p>Foto ilustrativa:</p>
+    <img src="{{ imagen.url }}"
+         height="500 px">
+    <br>
+    <hr>
+    <p>Dueño: {{ autor }}</p>
+    <hr>
+    Ver Comentarios:
+    <a href="{% url 'mostrarcom' titulo %}">
+        <button>Ver comentarios</button>
+    </a>
+    <br><br>
+    Volvé a la lista de publicaciones:
+    <a href="{% url 'articulos' %}">
+        <button>Regresar</button>
+    </a>
+    <hr>
+{% endblock %}

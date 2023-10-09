@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block cambiante %}
+    <hr>
+    <hr>
+    <hr>
+    <hr><br>
+    <h6>Este es tu articulo: {{ titulo }}</h6>
+    <br>
+    <h6>Si querés, editalo como mas te guste</h6>
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar cambios</button>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show alert-danger" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

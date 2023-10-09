@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block cambiante %}
+    <hr>
+    <hr>
+    <hr>
+    <hr><br>
+    <h6>Que te gustaría decirle?</h6>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Comentar</button>
+    </form>
+    <br>
+    <a href="{% url 'articulos' %}">
+        <button>Regresar</button>
+    </a>
+    <br><br>
+{% endblock %}

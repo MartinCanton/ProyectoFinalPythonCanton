@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block cambiante %}
+    
+    <hr>
+    <hr>
+    <hr><br>   
+    <br>
+    
+    <p>
+<h5>Hola! mi nombre es Martín Cantón.</h5>
+<p>A lo largo de mi trayectoria, he mantenido una profunda pasión por todo lo relacionado con la computación, abarcando tanto el ámbito del software como el hardware. A mis 26 años, me encuentro dando mis primeros pasos en el fascinante mundo de la programación, y esta experiencia me ha brindado la oportunidad de explorar nuevas perspectivas.
+Mi compromiso se orienta hacia la continua formación y el aprendizaje constante, aspirando a seguir ampliando mis conocimientos a través de futuros cursos y desafíos.
+Python representa mi primer acercamiento a los lenguajes de programación, sirviendo como la herramienta que me introduce en los fundamentos esenciales de la programación.
+    </p>
+    <img src="{% static 'blog/Program.jpg' %}" width="300" height="200">
+    
+    <br><br>
+    <p>Este sitio web proporciona una plataforma integral para la publicación de oportunidades de ventas y alquileres de propiedades inmobiliarias, incluyendo departamentos, casas y locales comerciales.
+     Los usuarios registrados tienen la capacidad de realizar publicaciones y participar activamente mediante comentarios en las publicaciones de otros usuarios. Además, se facilita la interacción directa en las publicaciones, permitiendo que un asesor inmobiliario se comunique tanto con el propietario del inmueble como con los interesados. Este proceso posibilita la coordinación de visitas a las propiedades y ofrecer información adicional.</p>
+    <img src="{% static 'blog/Alquiler.jpg' %}" width="300" height="200">
+    <br><br>
+    
+    <a href="{% url 'inicio' %}">
+        <button>Regresar</button>
+    </a>
+    <hr>
+
+{% endblock %}

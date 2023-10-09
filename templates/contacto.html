@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{%load static %}
+
+{% block cambiante %}
+ <hr>
+ <hr>
+ <hr>
+ <hr>
+ <hr>
+ <hr>
+ 
+
+<h3>Deja tu mensaje para que alguien del staff se comunique contigo.</h3>
+  <form method="post" action="{% url 'contacto' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+  </form>
+
+
+{% endblock %}

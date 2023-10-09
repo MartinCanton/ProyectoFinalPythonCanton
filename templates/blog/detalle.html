@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block cambiante %}
+    <hr>
+    <hr>
+    <hr>
+    <hr><br>
+    <h6>Fijate que publicaciones hay disponibles!</h6>
+    <hr>
+    ¿Ya sabes en que estás interesado? Buscalo acá!
+    <br><br>
+    <form action="{% url 'buscart' %}">
+        <table>
+            {{ form_busqueda.as_table }}
+        </table>
+        <br>
+        <input type="submit" , value="Buscar">
+    </form>
+    <hr>
+    ¿Querés ver que publicaciones hay disponibles? A continuación te dejamos un listado:
+    <br><br>
+    {% if all_arts %}
+        {% for art in all_arts %}
+            <p>
+                Titulo: {{ art.titulo }}, detalle: {{ art.subtitulo }}
+                <a href="{% url "detblog" art.titulo %}">Ver más</a>
+                {% if user == art.autor %}
+                    <a href="{% url "editart" art.titulo %}">Editar</a>
+                    <a href="{% url "borrart" art.titulo %}">Eliminar</a>
+                {% endif %}
+            </p>
+        {% endfor %}
+    {% else %}
+        <h6>No hay publicaciones por el momento.</h6>
+    {% endif %}
+
+    <hr>
+    Te interesó alguna propiedad? Deja un comentario con tus datos para que nos contactemos.
+    <a href="{% url 'comentart' %}">
+        <button>Comentar</button>
+    </a>
+    <br><br>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block cambiante %}
+    <hr>
+    <hr>
+    <hr>
+    <hr><br>
+    {% if filtro %}
+        <h6>PUBLICACIONES ENCONTRADAS:</h6> <br>
+        {% for f in filtro %}
+            <p>
+                {{ f }}
+                <a href="{% url "detblog" f.titulo %}">Ver más</a>
+                {% if user == f.autor %}
+                    <a href="{% url "editart" f.titulo %}">Editar</a>
+                    <a href="{% url "borrart" f.titulo %}">Eliminar</a>
+                {% endif %}
+            </p>
+        {% endfor %}
+    {% else %}
+        <br>
+        <h6>No se encontraron resultados.</h6>
+        <br>
+        Volvé a la lista de publicaciones:
+        <a href="{% url 'articulos' %}">
+            <button>Regresar</button>
+        </a>
+        <br><br>
+    {% endif %}
+
+{% endblock %}

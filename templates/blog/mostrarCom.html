@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block cambiante %}
+    <hr>
+    <hr>
+    <hr>
+    <hr><br>
+    <h6>Comentarios:</h6>
+    <hr>
+
+    {% if comentarios %}
+        {% for com in comentarios %}
+            <p>Titulo: {{ com.titulo }}</p>
+            <p>Comentario: {{ com.comentar }}</p>
+            <p>Autor: {{ com.author }}</p>
+            <hr>
+        {% endfor %}
+    {% else %}
+        No hay comentarios aún.
+    {% endif %}
+    <a href="{% url 'articulos' %}">
+        <button>Regresar</button>
+    </a>
+    <br><br>
+{% endblock %}
