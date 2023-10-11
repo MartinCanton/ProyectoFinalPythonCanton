@@ -19,6 +19,10 @@ Es importante señalar que la publicación de propiedades en el blog es completa
 9) Login / Logout
 10) About me
 
+<h4> SUPERUSER </h4>
+MartinAdmin123(User)
+Admin1889(Password)
+
 <h5> CURSO Y COMISIÓN </h5>
 
 Curso Python - Comisión 47765 - Trabajo Final.
