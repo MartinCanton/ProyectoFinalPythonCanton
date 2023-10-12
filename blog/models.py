@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
-class Articulo(models.Model):  # Este modelo muestra cada receta de cada bebida en particular.
+class Articulo(models.Model):  
 
     fecha = models.DateTimeField(default=timezone.now)
     titulo = models.CharField(max_length=20)
@@ -16,7 +16,7 @@ class Articulo(models.Model):  # Este modelo muestra cada receta de cada bebida 
         return f"Titulo: {self.titulo}, detalle: {self.subtitulo}"
 
 
-class Comentario(models.Model):  # Este modelo almacena los comentarios que se hacen a cada artículo en particular.
+class Comentario(models.Model):  
     date = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     titulo = models.CharField(max_length=20, null=True)
