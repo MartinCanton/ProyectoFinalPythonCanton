@@ -115,7 +115,7 @@ def articulos(request):  # Esta vista permite que cada usuario vea que blog hay 
 
 
 @login_required
-def buscar_art(request):  # Esta vista permite que el usuario busque el trago que quiera a través de la interfaz.
+def buscar_art(request):  # Esta vista permite que el usuario busque el inmueble que quiera a través de la interfaz.
     form = BuscarArtForm(request.GET)
 
     if form.is_valid():
